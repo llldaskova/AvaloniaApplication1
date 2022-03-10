@@ -8,18 +8,40 @@ namespace AvaloniaApplication1.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private string _firstValue;
-        private string _secondValue;
-        private string Operation;
-        string A = "";
-        public ReactiveCommand<string, string> Button_Click { get; }
-        public ReactiveCommand<string, string> Calculate { get; }
+        private string _firstValue="";
+        private string _secondValue="";
+        private string Operation="";
+        string a = "";
+        
+        public ReactiveCommand<Unit, string> Button_Click{ get; }
+        public ReactiveCommand<Unit, string> Button_Click2 { get; }
+        public ReactiveCommand<Unit, string> Button_Click3 { get; }
+        public ReactiveCommand<Unit, string> Button_Click4 { get; }
+        public ReactiveCommand<Unit, string> Button_Click5 { get; }
+        public ReactiveCommand<Unit, string> Button_Click6 { get; }
+        public ReactiveCommand<Unit, string> Button_Click7 { get; }
+        public ReactiveCommand<Unit, string> Button_Click8 { get; }
+        public ReactiveCommand<Unit, string> Button_Click9 { get; }
+        public ReactiveCommand<Unit, string> Button_Click10 { get; }
+        public ReactiveCommand<Unit, string> Button_Click11 { get; }
+        public ReactiveCommand<Unit, string> Button_Click12 { get; }
 
-    bool isDisplayingResult = false;
         public MainWindowViewModel()
         {
-            AddNumberCommand = ReactiveCommand.Create<int>(AddNumber);
+            Button_Click = ReactiveCommand.Create(() => A += "I") ;
 
+        }
+
+        public string A
+        {
+            set
+            {
+                this.RaiseAndSetIfChanged(ref a, value);
+            }
+            get
+            {
+                return this.a;
+            }
         }
     }
 

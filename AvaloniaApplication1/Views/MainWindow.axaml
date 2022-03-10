@@ -11,18 +11,18 @@
     
 		
 <Grid ColumnDefinitions="30,30,30,40" RowDefinitions="35,30,30,30">
-    <TextBox Name="TexrBlock" Text="{Binding A}" IsUndoEnabled="False" Focusable="False" Height="30" Width="100" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"  ></TextBox>
-	<Button Name="I" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Grid.Column="0" Grid.Row="1">I</Button>
-    <Button Name="V" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Grid.Column="0" Grid.Row="2">V</Button>
-    <Button Name="X" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Grid.Column="0" Grid.Row="3">X</Button>
-    <Button Name="L" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Grid.Column="1" Grid.Row="1">L</Button>
-	<Button Name="C" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Grid.Column="1" Grid.Row="2">C</Button>
-	<Button Name="D" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Grid.Column="1" Grid.Row="3">D</Button>
-    <Button Name="M" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Grid.Column="2" Grid.Row="1">M</Button>
-    <Button Name="sum" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Grid.Column="2" Grid.Row="2">+</Button>
-    <Button Name="diff" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Grid.Column="2" Grid.Row="3">-</Button>
-    <Button Name="mult" Height="30" Width="40" Foreground="WhiteSmoke" Background="LightPink" Grid.Column="3" Grid.Row="1">*</Button>
-    <Button Name="div" Height="30" Width="40" Foreground="WhiteSmoke" Background="LightPink" Grid.Column="3" Grid.Row="2">/</Button>
-    <Button Name="eq" Height="30" Width="40" Foreground="WhiteSmoke" Background="LightPink" Grid.Column="3" Grid.Row="3">=</Button>
+    <TextBox Text="{Binding A}" Name="TexrBlock"  IsUndoEnabled="False" Focusable="False" Height="30" Width="100" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"  ></TextBox>
+	<Button   Name="I"  Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Command="{Binding Button_Click}" Grid.Column="0" Grid.Row="1">I</Button>
+    <Button  Name="V" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Command="{Binding Button_Click2}" Grid.Column="0" Grid.Row="2">V</Button>
+    <Button Name="X" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Command="{Binding Button_Click3}" Grid.Column="0" Grid.Row="3">X</Button>
+    <Button Name="L" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Command="{Binding Button_Click4}" Grid.Column="1" Grid.Row="1">L</Button>
+	<Button Name="C" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Command="{Binding Button_Click5}" Grid.Column="1" Grid.Row="2">C</Button>
+	<Button Name="D" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Command="{Binding Button_Click6}" Grid.Column="1" Grid.Row="3">D</Button>
+    <Button Name="M" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Command="{Binding Button_Click7}" Grid.Column="2" Grid.Row="1">M</Button>
+    <Button Name="sum" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Command="{Binding Button_Click8}" Grid.Column="2" Grid.Row="2">+</Button>
+    <Button Name="diff" Height="30" Width="30" Foreground="WhiteSmoke" Background="LightPink" Command="{Binding Button_Click9}" Grid.Column="2" Grid.Row="3">-</Button>
+    <Button Name="mult" Height="30" Width="40" Foreground="WhiteSmoke" Background="LightPink" Command="{Binding Button_Click10}" Grid.Column="3" Grid.Row="1">*</Button>
+    <Button Name="div" Height="30" Width="40" Foreground="WhiteSmoke" Background="LightPink" Command="{Binding Button_Click11}" Grid.Column="3" Grid.Row="2">/</Button>
+    <Button Name="eq" Height="30" Width="40" Foreground="WhiteSmoke" Background="LightPink" Command="{Binding Button_Click12}" Grid.Column="3" Grid.Row="3">=</Button>
 </Grid>
 </Window>
