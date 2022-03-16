@@ -30,16 +30,22 @@ namespace AvaloniaApplication1.Models
         }
         public static RomanNumber operator -(RomanNumber? n1, RomanNumber? n2)
         {
+            RomanNumberNull(n1);
+            RomanNumberNull(n2);
             if (n1.number <= n2.number) throw new RomanNumberException();
             return new RomanNumber((ushort)(n1.number - n2.number));
         }
         public static RomanNumber operator *(RomanNumber? n1, RomanNumber? n2)
         {
+            RomanNumberNull(n1);
+            RomanNumberNull(n2);
             return new RomanNumber((ushort)(n1.number * n2.number));
         }
         public static RomanNumber operator /(RomanNumber? n1, RomanNumber? n2)
         {
-            if(n1.number < n2.number) throw new RomanNumberException();
+            RomanNumberNull(n1);
+            RomanNumberNull(n2);
+            if (n1.number < n2.number) throw new RomanNumberException();
             return new RomanNumber((ushort)(n1.number / n2.number));
         }
 

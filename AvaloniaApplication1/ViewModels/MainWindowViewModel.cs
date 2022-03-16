@@ -3,33 +3,79 @@ using System.Collections.Generic;
 using System.Text;
 using System.Reactive;
 using ReactiveUI;
-
+using AvaloniaApplication1.Models;
 namespace AvaloniaApplication1.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private string _firstValue="";
-        private string _secondValue="";
+        RomanNumberExtend firtValue;
+        RomanNumberExtend secondValue;
+        string SecondValue = "";
         private string Operation="";
         string a = "";
-        
-        public ReactiveCommand<Unit, string> Button_Click{ get; }
-        public ReactiveCommand<Unit, string> Button_Click2 { get; }
-        public ReactiveCommand<Unit, string> Button_Click3 { get; }
-        public ReactiveCommand<Unit, string> Button_Click4 { get; }
-        public ReactiveCommand<Unit, string> Button_Click5 { get; }
-        public ReactiveCommand<Unit, string> Button_Click6 { get; }
-        public ReactiveCommand<Unit, string> Button_Click7 { get; }
-        public ReactiveCommand<Unit, string> Button_Click8 { get; }
-        public ReactiveCommand<Unit, string> Button_Click9 { get; }
-        public ReactiveCommand<Unit, string> Button_Click10 { get; }
-        public ReactiveCommand<Unit, string> Button_Click11 { get; }
-        public ReactiveCommand<Unit, string> Button_Click12 { get; }
+        string b = "";
+        string operation;
+        int flag = 0;
+        public ReactiveCommand<string, string> Button_Click{ get;  }
+        public ReactiveCommand<string, string> Button_Click2 { get; }
+        public ReactiveCommand<string, string> Button_Click3 { get; }
 
         public MainWindowViewModel()
         {
-            Button_Click = ReactiveCommand.Create(() => A += "I") ;
-
+            Button_Click = ReactiveCommand.Create<string,string>(( str) =>
+            {
+                if(flag==1)
+                {
+                    SecondValue += str;
+                }
+                else if (flag==2)
+                {
+                    flag = 0;
+                    A = "";
+                }
+                return A += str;
+            } );
+            Button_Click2 = ReactiveCommand.Create<string, string>((str) =>
+            {
+                if (flag == 0)
+                    firtValue = new RomanNumberExtend(A);
+                else
+                {
+                    throw new RomanNumberException();
+                }
+                operation = str;
+                flag++;
+                return A += str;
+            });
+            Button_Click3 = ReactiveCommand.Create<string,string>((str) =>
+            {
+                A += str;
+                secondValue = new RomanNumberExtend(SecondValue);
+                RomanNumber calc;
+                if (operation=="+")
+                {
+                     calc = firtValue + secondValue;
+                }
+                else if (operation == "-")
+                {
+                    calc = firtValue - secondValue;
+                }
+                else if (operation == "/")
+                {
+                     calc = firtValue / secondValue;
+                }
+                else if (operation == "*")
+                {
+                     calc = firtValue * secondValue;
+                }
+                else
+                {
+                    throw new RomanNumberException();
+                }
+                flag++;
+                SecondValue = "";
+                return A = calc.ToString();
+            });
         }
 
         public string A
@@ -40,7 +86,7 @@ namespace AvaloniaApplication1.ViewModels
             }
             get
             {
-                return this.a;
+                return a;
             }
         }
     }
